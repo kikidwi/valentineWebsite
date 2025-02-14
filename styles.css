@@ -7,6 +7,7 @@ body {
     text-align: center;
     overflow-x: hidden;
     background-color: #f8f2f7; /* Warna background soft */
+    
 }
 
 .container, .gallery-container {
@@ -33,6 +34,11 @@ h2.section-header {
     animation: fadeIn 2s ease-in-out;
 }
 
+.container p {
+    font-size: 1.5rem;
+    margin: 20px;
+}
+
 .date-text {
     font-size: 2rem;
     margin: 10px 0;
@@ -42,6 +48,7 @@ h2.section-header {
 
 .btn {
     margin-top: 20px;
+    margin-bottom: 50px;
     padding: 10px 20px;
     font-size: 1.2rem;
     background-color: #b5838d; /* Warna button soft */
