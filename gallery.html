@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Memories</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-image"></div>
+    <div class="overlay"></div>
+
+<!-- Audio Element for Background Music -->
+<audio id="background-music" autoplay loop>
+    <source src="./Assets/background-music.m4a" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- Music Control Button -->
+<button id="music-toggle" class="music-btn">
+    <i class="fas fa-music"></i>
+</button>
+
+<!-- Volume Control Slider -->
+<!-- <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.3"> -->
+
+
+    <div class="gallery-container">
+        <h1 class="animated-text">Sweet Memories</h1>
+        <p class="date-text">12-12-2020</p>
+
+        <!-- Section 1: 4x6 Polaroid Photos -->
+        <div class="gallery">
+            <div class="polaroid large">
+                <img src="./Assets/photo1.jpg" alt="Photo 1" onclick="openFullImg('./Assets/photo1.jpg')">
+                <p>Every moment with you is special. 💕</p>
+            </div>
+            <div class="polaroid large">
+                <img src="./Assets/photo2.jpg" alt="Photo 2" onclick="openFullImg('./Assets/photo2.jpg')">
+                <p>You make my heart skip a beat. 💓</p>
+            </div>
+            <div class="polaroid large">
+                <img src="./Assets/photo3.jpg" alt="Photo 3" onclick="openFullImg('./Assets/photo3.jpg')">
+                <p>Forever and always, my love. 💖</p>
+            </div>
+        </div>
+
+        <!-- Section 2: Small Polaroid Photos -->
+        <h2 class="section-header">Our Little Moments</h2>
+        <div class="small-gallery">
+            <div class="polaroid small">
+                <img src="./Assets/photo1.jpg" alt="Photo 4" onclick="openFullImg('./Assets/photo1.jpg')">
+                <p>Adventure together. 🌟</p>
+            </div>
+            <div class="polaroid small">
+                <img src="./Assets/photo3.jpg" alt="Photo 5" onclick="openFullImg('./Assets/photo3.jpg')">
+                <p>Sunset vibes. 🌅</p>
+            </div>
+            <div class="polaroid small">
+                <img src="./Assets/photo1.jpg" alt="Photo 6" onclick="openFullImg('./Assets/photo1.jpg')">
+                <p>Laughter is the best. 😂</p>
+            </div>
+            <div class="polaroid small">
+                <img src="./Assets/photo2.jpg" alt="Photo 7" onclick="openFullImg('./Assets/photo2.jpg')">
+                <p>Forever grateful. 💖</p>
+            </div>
+        </div>
+
+        <button onclick="goBack()" class="btn">Back to Home</button>
+    </div>
+
+    <!-- Full Image Modal -->
+    <div id="fullImgModal" class="modal">
+        <span class="close" onclick="closeFullImg()">&times;</span>
+        <img class="modal-content" id="fullImg">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

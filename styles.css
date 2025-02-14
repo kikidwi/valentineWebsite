@@ -1,0 +1,271 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Great Vibes', cursive;
+    color: #6d6875; /* Warna teks soft */
+    text-align: center;
+    overflow-x: hidden;
+    background-color: #f8f2f7; /* Warna background soft */
+}
+
+.container, .gallery-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
+    animation: fadeIn 2s ease-in-out;
+    color: #b5838d; /* Warna header soft */
+}
+
+h2.section-header {
+    font-size: 2.5rem;
+    margin: 40px 0 20px 0;
+    color: #b5838d; /* Warna header soft */
+    animation: fadeIn 2s ease-in-out;
+}
+
+.date-text {
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #6d6875; /* Warna teks soft */
+    animation: fadeIn 3s ease-in-out;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #b5838d; /* Warna button soft */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #9a6a73; /* Warna button hover soft */
+}
+
+/* Background Image */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./Assets/background.jpg'); /* Ganti dengan nama file background Anda */
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    opacity: 0.8; /* Lebih transparan untuk efek soft */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Overlay putih transparan */
+    z-index: 0;
+}
+
+/* Gallery Styles */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.polaroid {
+    background: white;
+    padding: 15px 15px 40px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan lebih soft */
+    transform: rotate(2deg);
+    transition: transform 0.3s ease;
+    animation: slideIn 1s ease-in-out;
+}
+
+.polaroid.large {
+    width: 300px; /* Ukuran 4x6 */
+    height: 400px;
+}
+
+.polaroid.large img {
+    width: 100%;
+    height: 300px; /* Sesuaikan tinggi foto */
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.polaroid.large p {
+    font-size: 1.2rem;
+    margin: 10px 0 0 0;
+    color: #6d6875; /* Warna teks soft */
+}
+
+.polaroid:nth-child(even) {
+    transform: rotate(-2deg);
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+/* Small Gallery Styles */
+.small-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.polaroid.small {
+    width: 150px; /* Ukuran kecil */
+    height: 200px;
+    padding: 10px 10px 30px 10px;
+}
+
+.polaroid.small img {
+    width: 100%;
+    height: 120px; /* Sesuaikan tinggi foto */
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.polaroid.small p {
+    font-size: 0.9rem;
+    margin: 5px 0 0 0;
+    color: #6d6875; /* Warna teks soft */
+}
+
+/* Full Image Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #b5838d; /* Warna close button soft */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2.section-header {
+        font-size: 2rem;
+    }
+
+    .date-text {
+        font-size: 1.5rem;
+    }
+
+    .polaroid.large {
+        width: 100%;
+        height: auto;
+    }
+
+    .polaroid.small {
+        width: 120px;
+        height: 160px;
+    }
+}
+
+/* Music Control Button */
+.music-btn {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background-color: #b5838d; /* Warna soft */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.music-btn:hover {
+    background-color: #9a6a73; /* Warna hover soft */
+}
+
+/* Volume Control Slider
+#volume-slider {
+    display: none;
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    width: 100px;
+    cursor: pointer;
+    z-index: 1000;
+} */
